@@ -263,6 +263,7 @@ Access Hadoop Namenode web interface at http://localhost:9870 and verify the clu
 Go to Utilities -> Browse File System
 At Beginning you might see empty, so back to the terminal and create
 N:B After User you can enter any name - depends on you.
+![Jps](/images/hadoop_user.png)
 
 ```
 hdfs dfs -mkdir -p /user/Hadoop/twitter_data
@@ -274,7 +275,7 @@ To load Data go to the csv folder and change demo to name of your csv
 hadoop fs -put demo.csv /user/Hadoop/twitter_data
 ```
 
-![Jps](/images/hadoop_user.png)
+![Jps](/images/csv_data.png)
 
 ### Step 11: Test Hadoop
 
