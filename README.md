@@ -206,7 +206,7 @@ Add the following configuration in the <configuration><configuration>
 ### Step 7: Enable SSH to localhost
 
 Go to System Setting -> General -> Remote Login and click i to allow access for only these Users as shown here
-[![Access](/images/access.png)]
+![Access](/images/access.png)
 
 Create security for SSH - But if you have SSH key dont run first command
 
@@ -255,7 +255,7 @@ Run jps to check if all datanodes and namenodes are running
 jps
 ```
 
-[![Jps](/images/jps.png)]
+![Jps](/images/jps.png)
 
 ### Step 10: Verify Installation
 
