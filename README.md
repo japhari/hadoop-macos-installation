@@ -260,6 +260,15 @@ jps
 ### Step 10: Verify Installation
 
 Access Hadoop Namenode web interface at http://localhost:9870 and verify the cluster status.
+Go to Utilities -> Browse File System
+At Beginning you might see empty, so back to the terminal and create
+N:B After User you can enter any name - depends on you.
+
+```
+hdfs dfs -mkdir -p /user/Hadoop/twitter_data
+```
+
+![Jps](/images/hadoop_user.png)
 
 ### Step 11: Test Hadoop
 
