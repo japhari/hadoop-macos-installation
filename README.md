@@ -268,6 +268,12 @@ N:B After User you can enter any name - depends on you.
 hdfs dfs -mkdir -p /user/Hadoop/twitter_data
 ```
 
+To load Data go to the csv folder and change demo to name of your csv
+
+```
+hadoop fs -put demo.csv /user/Hadoop/twitter_data
+```
+
 ![Jps](/images/hadoop_user.png)
 
 ### Step 11: Test Hadoop
