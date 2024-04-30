@@ -1,4 +1,4 @@
-# INSTALL HADOOOP ON MACOS
+## INSTALL HADOOOP ON MACOS
 
 ### Step 1: Install Homebrew
 
@@ -273,12 +273,104 @@ To load Data go to the csv folder and change demo to name of your csv
 
 ```
 hadoop fs -put demo.csv /user/Hadoop/twitter_data
+
 ```
 
 ![Jps](/images/csv_data.png)
 
 ### Step 11: Test Hadoop
 
+list the contents of the Hadoop file system root directory
+
+```
+hadoop fs -ls hdfs:///
+
+```
+
+```
+hadoop fs -ls /
+
+```
+
+Display the File Size
+
+```
+hdfs dfs -ls -h /user
+
+```
+
+List of Directories
+
+```
+hdfs dfs -ls -R /user
+
+```
+
+Display Content of a file
+
+```
+hdfs dfs -cat /user/Hadoop/twitter_data/demo.csv
+
+```
+
 Run sample MapReduce jobs to ensure Hadoop is functioning correctly.
 
 That's it! You've successfully installed Hadoop on macOS.
+
+## INSTALL PIG ON Mac
+
+Before Installing Apache Pig make sure the jps is running
+
+```
+jps
+
+```
+
+```
+1633
+52979 ResourceManager
+53063 NodeManager
+67961 Jps
+53368 DataNode
+53272 NameNode
+53470 SecondaryNameNode
+
+```
+
+Download the Apache Pig from the Official Website https://dlcdn.apache.org/pig/pig-0.17.0/pig-0.17.0.tar.gz (pig-0.17.0)
+N:B Replace the appropriate version
+Extract folder and move pig-0.17.0 from Downloads to /Users/<your-mac-user>/pig-0.17.0
+
+Then Open Configuration Environment and add
+
+sudo vim ~/.bash_profile
+
+```
+#PIG VARIABLES
+export PIG_HOME=/Users/<your-mac-user>/pig-0.17.0
+export PATH=$PATH:$PIG_HOME/bin
+export PIG_CLASSPATH=$PIG_HOME/conf:$HADOOP_INSTALL/etc/hadoop/bin
+export PIG_CONF_DIR=$PIG_HOME/conf
+export PIG_CLASSPATH=$PIG_CONF_DIR
+#PIG VARIABLES END
+
+```
+
+N:B Change <your-mac-user> with your user
+Then go to terminal and type
+
+```
+source ~/.bashrc
+
+```
+
+### Test Apache Pig
+
+```
+pig
+
+```
+
+![Jps](/images/pig.png)
+If it show grunt>
+Then Done Apache Pig is Up
