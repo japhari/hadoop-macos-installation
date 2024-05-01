@@ -374,3 +374,62 @@ pig
 ![Jps](/images/pig.png)
 If it show grunt>
 Then Done Apache Pig is Up
+
+## INSTALL Apache Sqoop ON Mac
+
+Download the Apache Sqoop from the Official Website https://archive.apache.org/dist/sqoop/1.4.4/sqoop-1.4.4.bin__hadoop-0.20.tar.gz
+N:B Replace the appropriate version
+Extract folder and move sqoop-1.4.4 from Downloads to /Users/<your-mac-user>/sqoop-1.99.7
+
+Then Open Configuration Environment and add
+
+sudo vim ~/.bash_profile
+
+```
+#APACHE SCOOP  VARIABLES
+export SQOOP_HOME=/Users/<your-mac-user>/sqoop-1.4.4
+export PATH=$PATH:$SQOOP_HOME/bin
+
+```
+
+N:B Change <your-mac-user> with your user
+Then go to terminal and type
+
+```
+source ~/.bashrc
+
+```
+
+Then Open Sqoop Environment Environment and add
+
+```
+sudo cp /Users/<your-mac-user>/sqoop-1.4.4/conf/sqoop-env-template.sh sqoop-env.sh
+sudo vim /Users/<your-mac-user>/sqoop-1.4.4/conf/sqoop-env.sh
+
+```
+
+Add this two path
+
+```
+export HADOOP_COMMON_HOME=/Users/<your-mac-user>/hadoop-3.4.0
+export HADOOP_MAPRED_HOME=/Users/<your-mac-user>/hadoop-3.4.0
+
+```
+
+Then Save
+N:B Hadoop Version must match with your hadoop version
+If it on other file link the correct path
+
+Then Download mysql-connector https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-8.4.0.tar.gz
+Extract the file and copy the jar file to the lib in the scoop folder - Remember it must be inside the lib
+
+Then Now you can test it
+N:B Make sure you have mysql user with access to test it
+
+```
+cd /Users/<your-mac-user>/sqoop-1.4.4.4/bin
+sqoop list-databases --connect jdbc:mysql://localhost/ --username root -P
+
+```
+
+![Jps](/images/sqoop.png)
